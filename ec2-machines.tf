@@ -14,15 +14,15 @@ resource "aws_instance" "app" {
     environment     = "_default"
     run_list        = ["cookbook::apache2"]
     node_name       = "app"
-    server_url      = "https://my-chefdemo-server-lwpj7v3rsswgxhp9.us-west-2.opsworks-cm.io"
+    server_url      = "https://my-chefdemo-server.io"
     recreate_client = true
     user_name       = "admin"
-    user_key        = "${file("private.pem")}"
+    user_key        = "${file("xxxx.pem")}"
     version         = "12.4.1"
     connection {
       type = "ssh"
       user = "ec2-user"
-      private_key = "${file("TerraformTest.pem")}"
+      private_key = "${file("xxxx.pem")}"
 }
 
     # If you have a self signed cert on your chef server change this to :verify_none
